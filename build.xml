@@ -1,4 +1,4 @@
-<project name="VezbeXMLBinding" default="main" basedir=".">
+<project name="Generisanje klasa iz xsd" default="main" basedir=".">
 
 	<!-- Skript generise potrebne java klase na osnovu XML seme ./data/univerzitet1.xsd
 	     Kako ova XML sema ima samo jedan globalni element, bice izgenerisana samo  jedna klasa (jedan .java fajl)
@@ -35,16 +35,11 @@
 	    <echo message="java.class.path = ${java.class.path}"/>
 	</target>
 	
-	<target name="generate_classes_1" depends="init">
-		<xjc schema="${data.dir}/univerzitet1.xsd" destdir="${gen.dir}"/>
-	</target>
-	
-	<target name="generate_classes_2" depends="init">
-		<xjc schema="${data.dir}/univerzitet2.xsd" destdir="${gen.dir}"/>
-	</target>
-	
-	<target name="generate_classes_3" depends="init">
-		<xjc schema="${data.dir}/student.xsd" destdir="${gen.dir}"/>
+	<target name="generate_all_classes" depends="init,generate_classes_102,generate_classes_103,
+										generate_classes_900,generate_classes_910,
+										generate_classes_zahtev_za_izvod,generate_classes_izvod,
+										generate_classes_nalog,generate_classes_faktura">
+		<echo message="Generating all classes"/>
 	</target>
 
 	<target name="generate_classes_102" depends="init">
@@ -82,22 +77,7 @@
 	<target name="generate_shcema" depends="init">
 		<schemagen srcdir="${src.dir}/yu/ac/ns/ftn/informatika/xmlb/example5" destdir="${gen.dir}"/>
 	</target>
-		
-	<!--
-	<target name="generate_schema_5" depends="init">
-		<schemagen destdir="${gen.dir}">
-			<src  path="${src.dir}/yu/ac/ns/ftn/informatika/xmlb/example5" />
-			<classpath>
-				<pathelement path="${src.dir}" />
-				<pathelement path="${bin.dir}" />
-	        	<fileset dir = "${lib.dir}">
-	            	<include name="*.jar"/>
-	        	</fileset>
-			</classpath>
-		</schemagen>
-	</target>
-  	-->
 	
-    <target name="main" depends="generate_classes_1"/>
+    <target name="main" depends="generate_all_classes"/>
   
 </project>
