@@ -4,14 +4,15 @@
     targetNamespace="http://www.ftn.uns.ac.rs/xws/cbs/faktura" elementFormDefault="qualified"
     xmlns:t="http://www.ftn.uns.ac.rs/xws/cbs/tipovi">
     <xs:import namespace="http://www.ftn.uns.ac.rs/xws/cbs/tipovi" schemaLocation="tipovi.xsd"/>
-    <xs:element name="faktura" type="Faktura"> </xs:element>
-    <xs:complexType name="Faktura">
-        <xs:sequence>
-            <xs:element name="zaglavlje" type="FakturaZaglavlje" maxOccurs="1" minOccurs="1"> </xs:element>
-            <xs:element maxOccurs="unbounded" name="stavke" type="FakturaStavka" minOccurs="1">
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
+    <xs:element name="faktura">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="zaglavlje" type="FakturaZaglavlje" maxOccurs="1" minOccurs="1"> </xs:element>
+                <xs:element maxOccurs="unbounded" name="stavke" type="FakturaStavka" minOccurs="1">
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
     <xs:complexType name="FakturaZaglavlje">
         <xs:sequence>
             <xs:element name="id_poruke" type="t:TID" maxOccurs="1"/>

@@ -4,14 +4,15 @@
     targetNamespace="http://www.ftn.uns.ac.rs/xws/cbs/izvod" elementFormDefault="qualified"
     xmlns:t="http://www.ftn.uns.ac.rs/xws/cbs/tipovi">
     <xs:import namespace="http://www.ftn.uns.ac.rs/xws/cbs/tipovi" schemaLocation="tipovi.xsd"/>
-    <xs:element name="izvod" type="Izvod"> </xs:element>
-    <xs:complexType name="Izvod">
-        <xs:sequence>
-            <xs:element name="zaglavlje" maxOccurs="1" minOccurs="1" type="IzvodZaglavlje"> </xs:element>
-            <xs:element maxOccurs="unbounded" name="stavke" minOccurs="1" type="IzvodStavka">
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
+    <xs:element name="izvod">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="zaglavlje" maxOccurs="1" minOccurs="1" type="IzvodZaglavlje"> </xs:element>
+                <xs:element maxOccurs="unbounded" name="stavke" minOccurs="1" type="IzvodStavka">
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
     <xs:complexType name="IzvodZaglavlje">
         <xs:sequence>
             <xs:element name="broj_racuna" type="t:TRacun"/>

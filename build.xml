@@ -73,10 +73,6 @@
 	<target name="generate_classes_faktura" depends="init">
 						<xjc schema="${data.dir}/faktura.xsd" destdir="${gen.dir}"/>
 			</target>
-		
-	<target name="generate_shcema" depends="init">
-		<schemagen srcdir="${src.dir}/yu/ac/ns/ftn/informatika/xmlb/example5" destdir="${gen.dir}"/>
-	</target>
 	
     <target name="main" depends="generate_all_classes"/>
   
