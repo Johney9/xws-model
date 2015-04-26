@@ -5,5 +5,5 @@
 // Generated on: 2015.04.12 at 04:51:17 AM CEST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.ftn.uns.ac.rs/xws/cbs/faktura", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package rs.ac.uns.ftn.xws.cbs.faktura;
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.ftn.uns.ac.rs/xws/cbs/korisnici", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package rs.ac.uns.ftn.xws.cbs.korisnici;
