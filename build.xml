@@ -30,7 +30,9 @@
 	<target name="generate_all_classes" depends="init,generate_classes_102,generate_classes_103,
 										generate_classes_900,generate_classes_910,
 										generate_classes_zahtev_za_izvod,generate_classes_izvod,
-										generate_classes_nalog,generate_classes_faktura">
+										generate_classes_nalog,generate_classes_faktura,
+										generate_classes_korisnik,generate_classes_korisnici,
+										generate_classes_banka_app_mapper, generate_classes_firma_app_mapper">
 		<echo message="Generating all classes"/>
 	</target>
 
@@ -64,7 +66,23 @@
 	
 	<target name="generate_classes_faktura" depends="init">
 						<xjc schema="${data.dir}/faktura.xsd" destdir="${gen.dir}"/>
-			</target>
+	</target>
+	
+	<target name="generate_classes_korisnik" depends="init">
+						<xjc schema="${data.dir}/korisnik.xsd" destdir="${gen.dir}"/>
+	</target>
+	
+	<target name="generate_classes_korisnici" depends="init">
+							<xjc schema="${data.dir}/korisnici.xsd" destdir="${gen.dir}"/>
+	</target>
+	
+	<target name="generate_classes_banka_app_mapper" depends="init">
+						<xjc schema="${data.dir}/banka_app_mapper.xsd" destdir="${gen.dir}"/>
+	</target>
+	
+	<target name="generate_classes_firma_app_mapper" depends="init">
+							<xjc schema="${data.dir}/firma_app_mapper.xsd" destdir="${gen.dir}"/>
+	</target>
 	
     <target name="main" depends="generate_all_classes"/>
   
